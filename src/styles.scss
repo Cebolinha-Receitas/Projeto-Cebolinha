@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'tailwindcss';
+
+:root{
+    --red: #A8201A;
+    --green: #1d631d;
+    --beige: #DBEBC0;
+    --gold: #EFA00B;
+    --brown: #432818;
+    --darkgreen: #0d420d;
+}
+
+body{
+    background-color: beige;
+}
