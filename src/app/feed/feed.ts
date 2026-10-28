@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   imports: [],
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './feed.scss',
   templateUrl: './feed.html',
 })
-export class Feed {}
+export class Feed {
+  private router = inject(Router); 
+  onVoltar(): void {
+    this.router.navigate(['cadastro-receitas']); 
+  }
+}

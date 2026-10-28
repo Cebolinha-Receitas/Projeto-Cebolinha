@@ -1,0 +1,40 @@
+<div class="flex h-full w-full max-w-[280px] flex-col overflow-hidden rounded-xl bg-white shadow-md">
+  
+  <div class="relative h-48 w-full">
+    <img [src]="imagemUrl" [alt]="titulo" class="h-full w-full object-cover" />
+    
+    <button 
+      (click)="onToggleFavorito()"
+      class="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm transition-transform hover:scale-110"
+      aria-label="Adicionar aos favoritos"
+    >
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 24 24" 
+        [attr.fill]="isFavorito ? 'currentColor' : 'none'"
+        stroke="currentColor" 
+        class="h-5 w-5 transition-colors" 
+        [ngClass]="isFavorito ? 'text-red-600' : 'text-gray-700'"
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+      >
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div class="flex flex-1 flex-col p-4">
+    <h3 class="mb-2 text-lg font-extrabold leading-tight text-gray-900">{{ titulo }}</h3>
+    <p class="mb-4 text-xs text-gray-600 line-clamp-3">{{ descricao }}</p>
+    
+    <div class="mt-auto">
+      <button 
+        (click)="onVerReceita()"
+        class="w-full rounded-md bg-[#a7281c] px-4 py-2 text-center text-sm font-bold text-white transition-colors hover:bg-red-900"
+      >
+        Ver receita
+      </button>
+    </div>
+  </div>
+</div>

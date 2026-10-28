@@ -1,6 +1,8 @@
 <header class="bg-(--green) flex items-center justify-between px-6 py-4 shadow-md">
   <div class="flex items-center gap-3">
-    <img class="h-12 w-auto object-contain" src="cebolinhalogo.png" alt="logotipo">
+    <a href="feed">
+      <img class="h-12 w-auto object-contain" src="cebolinhalogo.png" alt="logotipo">
+    </a>
   </div>
   <div class="flex w-full max-w-md items-center bg-(--beige) rounded-full px-4 py-2 text-neutral-700 focus-within:ring-2 focus-within:ring-emerald-500">
     <svg class="w-5 h-5 text-neutral-500 mr-2" lucideSearch></svg>
@@ -12,8 +14,12 @@
   </div>
   <div class="flex items-center gap-4">
     <svg class="text-(--beige) w-6 h-6 hover:opacity-80 cursor-pointer" lucideCaseSensitive></svg>
-    <svg class="text-(--beige) w-6 h-6 hover:opacity-80 cursor-pointer" routerLink="favoritos" lucideHeart></svg>
-    <svg class="text-(--beige) w-6 h-6 hover:opacity-80 cursor-pointer" routerlink="login" lucideUser></svg>
+    <a href="favoritos">
+      <svg class="text-(--beige) w-6 h-6 hover:opacity-80 cursor-pointer" routerLink="favoritos" lucideHeart></svg>
+    </a>
+    <a href="login">
+      <svg class="text-(--beige) w-6 h-6 hover:opacity-80 cursor-pointer" routerlink="login" lucideUser></svg>  
+    </a>
   </div>
 
 </header>

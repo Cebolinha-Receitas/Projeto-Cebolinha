@@ -1,0 +1,106 @@
+<div class="min-h-screen p-8 font-sans">
+  <div class="mx-auto max-w-5xl rounded-xl bg-white p-8 shadow-sm">
+    
+    <!-- Cabeçalho -->
+    <div class="mb-6">
+      <h1 class="text-3xl font-bold text-gray-800">Cadastro de receitas</h1>
+      <p class="mt-1 text-gray-500">Cadastre uma receita nova!</p>
+    </div>
+    
+    <hr class="mb-8 border-gray-200" />
+
+    <!-- Formulário -->
+    <form [formGroup]="receitaForm" (ngSubmit)="onSubmit()">
+      
+      <!-- Grelha Principal -->
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        
+        <!-- Coluna Esquerda: Título, Categoria e Descrição -->
+        <div class="flex flex-col gap-4">
+          <div>
+            <label class="mb-1 block text-sm font-semibold text-gray-700">Título</label>
+            <input 
+              type="text" 
+              formControlName="titulo" 
+              placeholder="Ana Sousa Silva"
+              class="w-full rounded-md border border-gray-300 p-2.5 outline-none focus:border-green-700" 
+            />
+          </div>
+
+          <div>
+            <label class="mb-1 block text-sm font-semibold text-gray-700">Categoria</label>
+            <select 
+              formControlName="categoria" 
+              class="w-full rounded-md border border-gray-300 bg-white p-2.5 outline-none focus:border-green-700"
+            >
+              <option value="" disabled selected></option>
+              <option value="sobremesa">Sobremesa</option>
+              <option value="prato-principal">Prato Principal</option>
+              <option value="entrada">Entrada</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="mb-1 block text-sm font-semibold text-gray-700">Descrição</label>
+            <textarea 
+              formControlName="descricao" 
+              placeholder="Escreva uma descrição..."
+              class="h-32 w-full resize-none rounded-md border border-gray-300 p-2.5 outline-none focus:border-green-700"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Foto -->
+        <div class="flex flex-col">
+          <label class="mb-1 block text-sm font-semibold text-gray-700">Foto</label>
+          <div class="flex flex-1 cursor-pointer items-center justify-center rounded-md border border-gray-200 bg-[#f9faf9] hover:bg-gray-50">
+            <!-- Ícone de Câmara Fotográfica -->
+            <svg class="h-24 w-24 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
+            </svg>
+            <input type="file" class="hidden" />
+          </div>
+        </div>
+
+        <!-- Linha Inferior: Ingredientes -->
+        <div>
+          <label class="mb-1 block text-sm font-semibold text-gray-700">Ingredientes</label>
+          <textarea 
+            formControlName="ingredientes" 
+            placeholder="• duas xícaras de açúcar;&#10;• duas xícaras de farinha de trigo;&#10;• duas xícaras de leite..."
+            class="h-40 w-full resize-none rounded-md border border-gray-300 p-2.5 outline-none focus:border-green-700"
+          ></textarea>
+        </div>
+
+        <!-- Linha Inferior: Passo a passo -->
+        <div>
+          <label class="mb-1 block text-sm font-semibold text-gray-700">Passo a passo</label>
+          <textarea 
+            formControlName="passoAPasso" 
+            placeholder="Descreva aqui o passo a passo da receita..."
+            class="h-40 w-full resize-none rounded-md border border-gray-300 p-2.5 bg-[#fbfdfb] outline-none focus:border-green-700"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Botões de Ação -->
+      <div class="mt-8 flex justify-end gap-4">
+        <button 
+          type="button" 
+          (click)="onVoltar()"
+          class="rounded-md border border-gray-400 bg-white px-8 py-2.5 font-semibold text-gray-600 hover:bg-gray-50"
+        >
+          Voltar
+        </button>
+        <button 
+          type="submit" 
+          [disabled]="receitaForm.invalid"
+          class="rounded-md bg-[#004d1a] px-8 py-2.5 font-semibold text-white hover:bg-green-900 disabled:opacity-50"
+        >
+          Cadastrar
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

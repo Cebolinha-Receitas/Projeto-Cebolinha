@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-
+import {input} from '../input/input'
 @Component({
-  imports: [],
+  imports: [input],
   selector: 'app-cadastro',
   styleUrl: './cadastro.scss',
   templateUrl: './cadastro.html',
