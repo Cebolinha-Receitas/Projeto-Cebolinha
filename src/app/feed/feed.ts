@@ -15,4 +15,8 @@ export class Feed {
   onVoltar(): void {
     this.router.navigate(['cadastro-receitas']); 
   }
+
+  verDetalhe(codigo: number) : void {
+    this.router.navigate(['/artigo', codigo]);
+  }
 }

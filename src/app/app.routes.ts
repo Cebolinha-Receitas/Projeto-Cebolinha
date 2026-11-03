@@ -11,9 +11,9 @@ import { CadastroReceitas } from './cadastro-receitas/cadastro-receitas';
 
 export const routes: Routes = [
     {path: "", component: Feed},
-    {path: "artigo", component: ArtigoBlog},
+    {path: "artigo/:codigo", component: ArtigoBlog},
     {path: "cadastro", component: Cadastro},
-    {path: "detalhe-receita", component: DetalheReceita},
+    {path: "detalhe-receita/:codigo", component: DetalheReceita},
     {path: "esqueci-a-senha", component: EsqueciASenha},
     {path: "favoritos", component: Favoritos},
     {path: "feed", component: Feed},
