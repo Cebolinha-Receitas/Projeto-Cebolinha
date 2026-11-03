@@ -1,0 +1,89 @@
+<div class="flex min-h-screen items-center justify-center bg-(--beige) p-6 font-sans">
+  <div class="w-full max-w-3xl rounded-2xl bg-white p-8 shadow-sm">
+    
+    <!-- Cabeçalho -->
+    <div class="mb-6">
+      <h1 class="text-3xl font-bold text-[#1f2923]">Dados da Conta</h1>
+      <p class="mt-1 text-sm text-gray-500">Veja e edite os dados da conta</p>
+    </div>
+
+    <!-- Formulário -->
+    <form class="flex flex-col gap-6">
+      
+      <!-- Secção Superior: Foto + Nome e E-mail -->
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center">
+        <!-- Foto de Perfil -->
+        <div class="h-28 w-28 shrink-0 overflow-hidden rounded-xl">
+          <img 
+            src="foto.png" 
+            alt="Foto de perfil" 
+            class="h-full w-full object-cover"
+          />
+        </div>
+
+        <!-- Campos Nome e E-mail -->
+        <div class="flex flex-1 flex-col gap-4">
+          <div>
+            <label class="mb-1 block text-xs font-bold text-gray-700">Nome</label>
+            <input 
+              type="text" 
+              placeholder="Ana Sousa Silva"
+              class="w-full rounded-xl border border-gray-200 bg-[#f8f9f8] p-3 text-sm text-gray-400 outline-none focus:border-green-700 focus:bg-white"
+            />
+          </div>
+
+          <div>
+            <label class="mb-1 block text-xs font-bold text-gray-700">E-mail</label>
+            <input 
+              type="email" 
+              placeholder="ana.sousasilva@gmail.com"
+              class="w-full rounded-xl border border-gray-200 bg-[#f8f9f8] p-3 text-sm text-gray-400 outline-none focus:border-green-700 focus:bg-white"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Divisor -->
+      <hr class="border-t border-gray-100" />
+
+      <!-- Secção Inferior: Senha e Confirmar Senha -->
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div>
+          <label class="mb-1 block text-xs font-bold text-gray-700">Senha</label>
+          <input 
+            type="password" 
+            placeholder="ana.sousasilva@gmail.com"
+            class="w-full rounded-xl border border-gray-200 bg-[#f8f9f8] p-3 text-sm text-gray-400 outline-none focus:border-green-700 focus:bg-white"
+          />
+        </div>
+
+        <div>
+          <label class="mb-1 block text-xs font-bold text-gray-700">Confirmar Senha</label>
+          <input 
+            type="password" 
+            placeholder="ana.sousasilva@gmail.com"
+            class="w-full rounded-xl border border-gray-200 bg-[#f8f9f8] p-3 text-sm text-gray-400 outline-none focus:border-green-700 focus:bg-white"
+          />
+        </div>
+      </div>
+
+      <!-- Botões de Ação -->
+      <div class="mt-4 flex justify-end gap-4">
+        <button 
+          type="button"
+          class="rounded-xl border-2 border-gray-400/80 bg-white px-8 py-2.5 text-sm font-bold text-gray-600 transition-colors hover:bg-gray-50"
+        >
+          Voltar
+        </button>
+
+        <button 
+          type="submit"
+          class="rounded-xl bg-(--green) px-8 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#022b04]"
+        >
+          Cadastrar
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -22,6 +22,7 @@
 </button>
 
 <main class="flex gap-10 p-5">
+  <!-- Coluna do Blog -->
   <section class="flex-1/2 flex flex-col gap-5">
     <h1 class="font-bold text-(--darkgreen) text-2xl">Blog do Cebolinha</h1>
 
@@ -29,12 +30,32 @@
       <button (click)="verDetalhe(itemb.id)">
         <img class="max-w-[100%] rounded-lg" [src]="itemb.img" [alt]="itemb.title">
         <div class="max-w-[90%] text-left">
-          <h1 class="font-bold text-lg text-gray-800" >{{ itemb.title }}</h1>
+          <h1 class="font-bold text-lg text-gray-800">{{ itemb.title }}</h1>
           <p class="font-semibold text-gray-500">{{ itemb.postData }}</p>
         </div>
       </button>
-      </div>
-      
+    </div>
   </section>
-    <section class="flex-1/2"></section>
+
+  <!-- Coluna de Receitas vindas da API -->
+  <section class="flex-1/2 flex flex-col gap-5">
+    <h1 class="font-bold text-(--darkgreen) text-2xl">Receitas da Comunidade</h1>
+
+    <div *ngIf="carregando" class="text-gray-500 font-semibold">
+      Carregando receitas...
+    </div>
+
+    <div *ngIf="!carregando && receitas.length === 0" class="text-gray-500 font-semibold">
+      Nenhuma receita cadastrada ainda.
+    </div>
+
+    <div *ngFor="let itemr of receitas" class="w-full">
+      <app-card-receita
+        [imagemUrl]="itemr.photoUrl || 'assets/default-recipe.png'"
+        [titulo]="itemr.title"
+        [descricao]="itemr.description || ''"
+        (verReceitaClick)="verDetalheReceita(itemr.id)"
+      ></app-card-receita>
+    </div>
+  </section>
 </main>

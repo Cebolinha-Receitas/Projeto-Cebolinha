@@ -1,40 +1,42 @@
-<div class="flex h-full w-full max-w-[280px] flex-col overflow-hidden rounded-xl bg-white shadow-md">
-  
+<div class="flex flex-col bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+  <!-- Imagem da receita -->
   <div class="relative h-48 w-full">
-    <img [src]="imagemUrl" [alt]="titulo" class="h-full w-full object-cover" />
-    
-    <button 
+    <img
+      [src]="imagemUrl"
+      [alt]="titulo"
+      class="w-full h-full object-cover"
+    />
+    <!-- Botão de Favorito -->
+    <button
+      type="button"
       (click)="onToggleFavorito()"
-      class="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm transition-transform hover:scale-110"
-      aria-label="Adicionar aos favoritos"
+      class="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors"
     >
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 24 24" 
-        [attr.fill]="isFavorito ? 'currentColor' : 'none'"
-        stroke="currentColor" 
-        class="h-5 w-5 transition-colors" 
-        [ngClass]="isFavorito ? 'text-red-600' : 'text-gray-700'"
-        stroke-width="2" 
-        stroke-linecap="round" 
-        stroke-linejoin="round"
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        [attr.fill]="isFavorito ? '#ef4444' : 'none'"
+        [attr.stroke]="isFavorito ? '#ef4444' : 'currentColor'"
+        stroke-width="2"
       >
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
       </svg>
     </button>
   </div>
 
-  <div class="flex flex-1 flex-col p-4">
-    <h3 class="mb-2 text-lg font-extrabold leading-tight text-gray-900">{{ titulo }}</h3>
-    <p class="mb-4 text-xs text-gray-600 line-clamp-3">{{ descricao }}</p>
-    
-    <div class="mt-auto">
-      <button 
-        (click)="onVerReceita()"
-        class="w-full rounded-md bg-[#a7281c] px-4 py-2 text-center text-sm font-bold text-white transition-colors hover:bg-red-900"
-      >
-        Ver receita
-      </button>
-    </div>
+  <!-- Informações do Card -->
+  <div class="p-4 flex flex-col gap-2">
+    <h2 class="font-bold text-xl text-gray-800">{{ titulo }}</h2>
+    <p class="text-sm text-gray-600 line-clamp-2">{{ descricao }}</p>
+
+    <button
+      type="button"
+      (click)="onVerReceita()"
+      class="mt-3 w-full py-2 px-4 bg-(--darkgreen) text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
+    >
+      Ver Receita
+    </button>
   </div>
 </div>
