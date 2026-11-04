@@ -34,11 +34,11 @@
               class="w-full rounded-md border border-gray-300 bg-white p-2.5 outline-none focus:border-green-700"
             >
               <option class="text-gray-700" value="" disabled selected>Escolha uma categoria</option>
-              <option value="sobremesa">Sobremesa</option>
-              <option value="prato-principal">Prato Principal</option>
-              <option value="entrada">Entrada</option>
-              <option value="petisco">Petisco</option>
-              <option value="lanche">Lanche</option>
+              <option value="SOBREMESA">Sobremesa</option>
+              <option value="PRATO_PRINCIPAL">Prato Principal</option>
+              <option value="ENTRADA">Entrada</option>
+              <option value="PETISCO">Petisco</option>
+              <option value="LANCHE">Lanche</option>
             </select>
           </div>
 
@@ -55,13 +55,14 @@
         <!-- Coluna Direita: Foto -->
         <div class="flex flex-col">
           <label class="mb-1 block text-sm font-semibold text-gray-700">Foto</label>
-          <div class="flex flex-1 cursor-pointer items-center justify-center rounded-md border border-gray-200 bg-[#f9faf9] hover:bg-gray-50">
+          <label class="flex flex-1 cursor-pointer flex-col items-center justify-center rounded-md border border-gray-200 bg-[#f9faf9] hover:bg-gray-50">
             <!-- Ícone de Câmara Fotográfica -->
             <svg class="h-24 w-24 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
               <path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
             </svg>
-            <input type="file" class="hidden" />
-          </div>
+            <span *ngIf="fotoNome" class="mt-2 text-xs font-semibold text-green-800">{{ fotoNome }}</span>
+            <input type="file" accept="image/*" (change)="onFileSelected($event)" class="hidden" />
+          </label>
         </div>
 
         <!-- Linha Inferior: Ingredientes -->
@@ -69,7 +70,7 @@
           <label class="mb-1 block text-sm font-semibold text-gray-700">Ingredientes</label>
           <textarea 
             formControlName="ingredientes" 
-            placeholder="• duas xícaras de açúcar;&#10;• duas xícaras de farinha de trigo;&#10;• duas xícaras de leite..."
+            placeholder="duas xícaras de açúcar;&#10;duas xícaras de farinha de trigo;&#10;duas xícaras de leite..."
             class="h-40 w-full resize-none rounded-md border border-gray-300 p-2.5 outline-none focus:border-green-700"
           ></textarea>
         </div>
@@ -96,10 +97,10 @@
         </button>
         <button 
           type="submit" 
-          [disabled]="receitaForm.invalid"
+          [disabled]="receitaForm.invalid || enviando"
           class="rounded-md bg-[#004d1a] px-8 py-2.5 font-semibold text-white hover:bg-green-900 disabled:opacity-50"
         >
-          Cadastrar
+          {{ enviando ? 'Cadastrando...' : 'Cadastrar' }}
         </button>
       </div>
 

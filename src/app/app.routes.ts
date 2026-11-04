@@ -8,6 +8,7 @@ import { Feed } from './feed/feed';
 import { Login } from './login/login';
 import { Perfil } from './perfil/perfil';
 import { CadastroReceitas } from './cadastro-receitas/cadastro-receitas';
+import { EditarDadosConta } from './editar-dados-conta/editar-dados-conta';
 
 export const routes: Routes = [
     {path: "", component: Feed},
@@ -19,5 +20,6 @@ export const routes: Routes = [
     {path: "feed", component: Feed},
     {path: "login", component: Login},
     {path: "perfil", component: Perfil},
-    {path: "cadastro-receitas", component: CadastroReceitas}
+    {path: "cadastro-receitas", component: CadastroReceitas},
+    {path: "editar-dados-conta", component: EditarDadosConta}
 ];

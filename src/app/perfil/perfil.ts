@@ -1,9 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  imports: [],
   selector: 'app-perfil',
-  styleUrl: './perfil.scss',
+  standalone: true,
   templateUrl: './perfil.html',
+  styleUrl: './perfil.scss'
 })
-export class Perfil {}
+export class Perfil {
+  private router = inject(Router);
+
+  onEditarDados(): void {
+    this.router.navigate(['/editar-dados-conta']); 
+  }
+
+  onMinhasReceitas(): void {
+    this.router.navigate(['/minhas-receitas']);
+  }
+}
