@@ -1,1 +1,43 @@
-<p>detalhe-receita works!</p>
+<main>
+    <div *ngIf="carregando" class="text-gray-500 font-semibold">
+      Carregando receitas...
+    </div>
+
+    <div *ngIf="!carregando && !receita.id" class="text-gray-500 font-semibold">
+      Nenhuma receita cadastrada ainda.
+    </div>
+
+    <div *ngIf="!!receita.id">
+      <section>
+        <div>
+            <h1> {{receita.title}} </h1>
+            <img [src]="receita.photoUrl" alt="">
+            <p>{{receita.category}}</p>
+            <p>Criado em {{receita.createdDate}}</p>
+            <p *ngIf="receita.updatedDate">
+                Atualizado em {{receita.updatedDate}}
+            </p>
+            <p>{{receita.category}}</p>
+        </div>
+
+        <div>
+            <h2>Descrição</h2>
+            <p>{{receita.description}}</p>
+        </div>
+
+        <div>
+            <h2>Ingredientes</h2>
+            <p>{{receita.ingredients}}</p>
+        </div>
+
+        <div>
+            <h2>Passo a Passo</h2>
+            <p>{{receita.steps}}</p>
+        </div>
+      </section>
+  
+      <section>
+  
+      </section>
+    </div>
+</main>
