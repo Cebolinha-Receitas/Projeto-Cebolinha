@@ -1,25 +1,38 @@
 <div class="flex min-h-[calc(90vh-80px)] items-center justify-center p-4">
     <div class="w-full max-w-md">
-        <form class="bg-white p-8 shadow-md rounded-lg border border-gray-100">
+        <form [formGroup]="form" (ngSubmit)="cadastrar()" class="bg-white p-8 shadow-md rounded-lg border border-gray-100">
             <h1 class="text-2xl font-bold text-center mb-3 text-gray-800">Cadastre-se</h1>
             <h2 class="text-center mb-6 text-gray-500">Preencha o formulário abaixo</h2>
             <hr class="mb-6 text-gray-500">
 
-            <app-input label="Nome" id="nome" placeholder="Ex: José Maria" type="text"></app-input>
+            <app-input formControlName="nome" label="Nome" id="nome" placeholder="Ex: José Maria" type="text"></app-input>
 
-            <app-input label="Email" id="email" placeholder="josemaria@gmail.com" type="email"></app-input>
+            <app-input formControlName="email" label="Email" id="email" placeholder="josemaria@gmail.com" type="email"></app-input>
 
-            <app-input label="Senha" id="senha" placeholder="Digite sua senha" type="password"></app-input>
+            <app-input formControlName="senha" label="Senha" id="senha" placeholder="Digite sua senha" type="password"></app-input>
 
-            <app-input label="Confirmar Senha" id="senha" placeholder="Digite sua senha" type="password"></app-input>
+            <app-input formControlName="confirmarSenha" label="Confirmar Senha" id="confirmarSenha" placeholder="Digite sua senha" type="password"></app-input>
             
-            <button class="bg-(--green) text-white py-2.5 px-4 rounded-md w-full mt-6 font-semibold hover:bg-[--darkgreen] transition-colors cursor-pointer" type="submit">
-                Entrar
+            @if (sucesso()) {
+                <span class="mt-4 block text-sm font-semibold text-green-600 text-center" role="status">
+                    {{ sucesso() }}
+                </span>
+            }
+
+            @if (erro()) {
+                <p class="mt-4 text-sm text-red-600" role="alert">{{ erro() }}</p>
+            }
+
+            <button
+                class="bg-(--green) text-white py-2.5 px-4 rounded-md w-full mt-6 font-semibold hover:bg-(--darkgreen) transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                type="submit"
+                [disabled]="carregando()">
+                {{ carregando() ? 'Cadastrando...' : 'Cadastrar' }}
             </button>
 
             <div class="mt-6 text-center">
                 Já tem uma conta?
-                <a href="login" class=" text-(--green) text-center hover:text-(--darkgreen)" >Faça Login</a>
+                <a routerLink="/login" class=" text-(--green) text-center hover:text-(--darkgreen)" >Faça Login</a>
             </div>
         </form>
     </div>

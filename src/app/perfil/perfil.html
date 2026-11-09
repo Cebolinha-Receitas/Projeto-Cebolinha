@@ -1,14 +1,12 @@
 <div class="flex justify-center items-center p-4">
     <div class="bg-white rounded-md p-3 shadow-md w-full max-w-md">
 
-        <!--Cabeçalho-->
+        <!-- Cabeçalho -->
         <div class="flex items-center gap-4 m-5">
             <div>
-                <img class="rounded-full w-20 h-20 object-cover bg-gray-200" src="foto.png" alt="Foto de perfil">
-            </div>
-            <div>
-                <h1 class="text-3xl font-semibold">Nome</h1>
-                <h3 class="text-gray-500">email@email.com</h3>
+                <!-- Exibe o nome e email dinamicamente -->
+                <h1 class="text-3xl font-semibold">{{ usuario()?.name || 'Carregando...' }}</h1>
+                <h3 class="text-gray-500">{{ usuario()?.email }}</h3>
             </div>
         </div>
 
