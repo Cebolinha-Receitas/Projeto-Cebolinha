@@ -38,19 +38,15 @@ export class Feed implements OnInit { // Nome da classe mantido como Feed
     )
     .subscribe({
       next: (dados) => {
-  console.log('1. Dados recebidos:', dados.content.length);
 
   this.receitas = dados.content;
 
-  console.log('2. Receitas atribuídas:', this.receitas.length);
 
   this.carregando = false;
 
-  console.log('3. Carregando:', this.carregando);
 
   this.cdr.detectChanges();
 
-  console.log('4. Elemento no HTML:', document.querySelectorAll('app-card-receita').length);
 },
       error: (erro) => {
         console.error('Erro ao buscar receitas da API:', erro);

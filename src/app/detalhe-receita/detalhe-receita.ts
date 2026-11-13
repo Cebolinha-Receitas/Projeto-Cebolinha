@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ReceitaService } from '../services/receita';
 import { Receita } from '../models/receita';
 import { RECIPE_EMPTY } from '../models/constants/emptyRecipe';
 import { CommonModule } from '@angular/common';
+import { finalize } from 'rxjs';
 
 @Component({
   imports: [CommonModule],
@@ -14,27 +15,39 @@ import { CommonModule } from '@angular/common';
 export class DetalheReceita {
   private route = inject(ActivatedRoute);
   private receitaService = inject(ReceitaService);
+  private cdr = inject(ChangeDetectorRef);
+
   receita: Receita = RECIPE_EMPTY;
   carregando: boolean = true;
   
-  id = this.route.snapshot.paramMap.get('id')?.toString()
+  id = this.route.snapshot.paramMap.get('codigo')?.toString();
 
   ngOnInit(): void {
-    if (!this.id) return
+    if (!this.id) {
+      this.carregando = false;
+      return;
+    }
 
-    this.carregarDados(this.id)
+    this.carregarDados(this.id);
   }
 
   carregarDados(id: string): void {
-    this.receitaService.buscarPorId(id).subscribe({
-      next: (dados) => {
-        this.receita = dados;
-        this.carregando = false;
-      },
-      error: (erro) => {
-        console.error('Erro ao buscar a receita:', erro);
-        this.carregando = false;
-      }
-    });
+    this.carregando = true;
+
+    this.receitaService.buscarPorId(id)
+      .pipe(
+        finalize(() => {
+          this.carregando = false;
+          this.cdr.detectChanges();
+        })
+      )
+      .subscribe({
+        next: (dados) => {
+          this.receita = dados;
+        },
+        error: (erro) => {
+          console.error('Erro ao buscar a receita:', erro);
+        }
+      });
   }
 }
