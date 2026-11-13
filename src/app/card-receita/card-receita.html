@@ -6,20 +6,23 @@
       [alt]="titulo"
       class="w-full h-full object-cover"
     />
-    <!-- Botão de Favorito -->
-    <button
+    
+    <!-- Botão de Favorito (Posicionado de forma absoluta no canto superior direito) -->
+    <button 
+      (click)="onToggleFavorito()" 
+      class="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-md cursor-pointer transition-transform hover:scale-110"
       type="button"
-      (click)="onToggleFavorito()"
-      class="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors"
+      aria-label="Favoritar"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        [attr.fill]="isFavorito ? '#ef4444' : 'none'"
-        [attr.stroke]="isFavorito ? '#ef4444' : 'currentColor'"
-        stroke-width="2"
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="20" height="20" 
+        viewBox="0 0 24 24" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        class="lucide lucide-heart"
+        [ngClass]="isFavorito ? 'text-red-500 fill-red-500' : 'text-gray-500 fill-transparent stroke-gray-500'"
       >
         <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
       </svg>
@@ -34,7 +37,7 @@
     <button
       type="button"
       (click)="onVerReceita()"
-      class="mt-3 w-full py-2 px-4 bg-(--darkgreen) text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
+      class="mt-3 w-full py-2 px-4 bg-(--darkgreen) text-white font-medium rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
     >
       Ver Receita
     </button>

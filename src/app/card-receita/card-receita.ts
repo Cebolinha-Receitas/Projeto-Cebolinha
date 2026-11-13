@@ -15,13 +15,18 @@ export class CardReceita {
   @Input() isFavorito: boolean = false;
 
   @Output() verReceitaClick = new EventEmitter<void>();
-  @Output() favoritoClick = new EventEmitter<void>();
+  // Atualizado para emitir o novo estado (true/false) para o componente pai
+  @Output() favoritoClick = new EventEmitter<boolean>(); 
 
   onVerReceita(): void {
     this.verReceitaClick.emit();
   }
 
   onToggleFavorito(): void {
-    this.favoritoClick.emit();
+    // Inverte o estado atual (se era false vira true, mudando a cor na hora)
+    this.isFavorito = !this.isFavorito;
+    
+    // Envia o novo estado para a tela (Feed/Pesquisa) saber se deve salvar ou deletar
+    this.favoritoClick.emit(this.isFavorito);
   }
 }

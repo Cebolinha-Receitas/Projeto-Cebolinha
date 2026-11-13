@@ -1,4 +1,5 @@
 export interface Receita {
+isFavorito: boolean;
   publicationDate?: string;
   username: string;
   id?: string; // UUID do Java é tratado como string no TypeScript

@@ -1,1 +1,24 @@
-<h1 class="text-3x1 font-bold">Meus Favoritos</h1>
+<section class="max-w-6xl mx-auto px-4 py-8 min-h-[60vh]">
+  <h1 class="text-2xl font-bold text-gray-800 mb-6">Meus Favoritos</h1>
+
+  @if (carregando()) {
+    <p class="text-gray-600">Carregando suas receitas favoritas...</p>
+  } @else if (erro()) {
+    <p class="text-red-600" role="alert">{{ erro() }}</p>
+  } @else if (receitas().length === 0) {
+    <p class="text-gray-600">Você ainda não favoritou nenhuma receita.</p>
+  } @else {
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (receita of receitas(); track receita.id) {
+        <app-card-receita
+          [imagemUrl]="receita.photoUrl ?? ''"
+          [titulo]="receita.title"
+          [descricao]="receita.description ?? ''"
+          [isFavorito]="true" 
+          (verReceitaClick)="verDetalheReceita(receita.id)"
+          (favoritoClick)="removerDosFavoritos(receita.id)"
+        />
+      }
+    </div>
+  }
+</section>

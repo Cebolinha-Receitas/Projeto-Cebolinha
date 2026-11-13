@@ -11,11 +11,13 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       @for (receita of receitas(); track receita.id) {
         <app-card-receita
-          [imagemUrl]="receita.photoUrl ?? ''"
+          [imagemUrl]="receita.photoUrl || 'assets/default-recipe.png'"
           [titulo]="receita.title"
-          [descricao]="receita.description ?? ''"
+          [descricao]="receita.description || ''"
+          [isFavorito]="receita.isFavorito ?? false"
           (verReceitaClick)="verDetalheReceita(receita.id)"
-        />
+          (favoritoClick)="favoritarReceita(receita.id, $event)" 
+        ></app-card-receita>
       }
     </div>
   }

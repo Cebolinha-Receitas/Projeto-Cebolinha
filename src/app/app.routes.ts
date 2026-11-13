@@ -3,7 +3,6 @@ import { ArtigoBlog } from './artigo-blog/artigo-blog';
 import { Cadastro } from './cadastro/cadastro';
 import { DetalheReceita } from './detalhe-receita/detalhe-receita';
 import { EsqueciASenha } from './esqueci-a-senha/esqueci-a-senha';
-import { Favoritos } from './favoritos/favoritos';
 import { Feed } from './feed/feed';
 import { Login } from './login/login';
 import { Perfil } from './perfil/perfil';
@@ -12,6 +11,7 @@ import { authGuard } from './services/auth-guard';
 import { guestGuard } from './services/guest-guard';
 import { MinhasReceitas } from './minhas-receitas/minhas-receitas';
 import { PesquisaComponent } from './pesquisa/pesquisa';
+import { FavoritosComponent } from './favoritos/favoritos';
 
 export const routes: Routes = [
     // ==========================================
@@ -27,7 +27,7 @@ export const routes: Routes = [
     {path: "", component: Feed, canActivate: [authGuard]},
     {path: "feed", component: Feed, canActivate: [authGuard]},
     {path: "perfil", component: Perfil, canActivate: [authGuard]},
-    {path: "favoritos", component: Favoritos, canActivate: [authGuard]},
+    {path: "favoritos", component: FavoritosComponent, canActivate: [authGuard]},
     {path: "cadastro-receitas", component: CadastroReceitas, canActivate: [authGuard]},
     {path: "minhas-receitas", component: MinhasReceitas, canActivate: [authGuard]},
     

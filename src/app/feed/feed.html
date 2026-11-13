@@ -60,7 +60,9 @@
         [imagemUrl]="itemr.photoUrl || 'assets/default-recipe.png'"
         [titulo]="itemr.title"
         [descricao]="itemr.description || ''"
+        [isFavorito]="itemr.isFavorito ?? false"
         (verReceitaClick)="verDetalheReceita(itemr.id)"
+        (favoritoClick)="favoritarReceita(itemr.id, $event)" 
       ></app-card-receita>
     </div>
   </section>
