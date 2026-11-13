@@ -3,11 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { ReceitaService } from '../services/receita';
 import { Receita } from '../models/receita';
 import { RECIPE_EMPTY } from '../models/constants/emptyRecipe';
-import { CommonModule } from '@angular/common';
 import { finalize } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { FormatarCategoriaPipe } from '../pipes/formatar-categoria-pipe';
+
 
 @Component({
-  imports: [CommonModule],
+  imports: [CommonModule, FormatarCategoriaPipe],
   selector: 'app-detalhe-receita',
   styleUrl: './detalhe-receita.scss',
   templateUrl: './detalhe-receita.html',

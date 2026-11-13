@@ -1,43 +1,56 @@
-<main class="flex flex-col px-15 py-10 bg-white rounded-xl max-w-[70%] items-center justify-self-center gap-5 shadow-2xl">
-    <div *ngIf="carregando" class="text-gray-500 font-semibold">
-      Carregando receitas...
-    </div>
+<main class="flex flex-col px-6 sm:px-10 py-10 bg-white rounded-xl w-11/12 max-w-4xl mx-auto items-center gap-6 shadow-2xl my-8">
+    
+    @if (carregando) {
+      <div class="text-gray-500 font-semibold text-center w-full text-lg">
+        Carregando receitas...
+      </div>
+    }
 
-    <div *ngIf="!carregando && !receita.id" class="text-gray-500 font-semibold">
-      Nenhuma receita cadastrada ainda.
-    </div>
+    @if (!carregando && !receita.id) {
+      <div class="text-gray-500 font-semibold text-center w-full text-lg">
+        Nenhuma receita cadastrada ainda.
+      </div>
+    }
 
-    <div *ngIf="!carregando && !!receita.id">
-      <section class="flex flex-col gap-3">
-        <div class="flex flex-col gap-3 justify-items-center items-center">
-            <h1 class="text-3xl text-center font-bold text-(--darkgreen)"> {{receita.title}} </h1>
-            <p class="lowercase text-2xl text-(--green) font-semibold">{{receita.category}}</p>
-            <img class="rounded-xl shadow-xl max-w-[70%]" [src]="receita.photoUrl" alt="">
-            <div class="w-full">
-              <p class="text-gray-500 text-center">Publicado por {{receita.user.name}} em {{receita.publicationDate}}</p>
-            </div>
-        </div>
+    @if (!carregando && !!receita.id) {
+      <div class="w-full">
+        <section class="flex flex-col gap-8 w-full">
+          <!-- Cabeçalho da Receita -->
+          <div class="flex flex-col gap-4 justify-items-center items-center text-center">
+              <h1 class="text-3xl font-bold text-(--darkgreen) break-words">{{receita.title}}</h1>
+              <p class="text-2xl text-(--green) font-semibold">
+                {{ receita.category | formatarCategoria }}
+              </p>
+                            
+              <!-- Imagem responsiva e centralizada -->
+              <img class="rounded-xl shadow-xl w-full max-w-2xl object-cover" [src]="receita.photoUrl" [alt]="receita.title">
+              
+              <div class="w-full mt-2">
+                <p class="text-gray-500 text-base">Publicado por <span class="font-medium">{{receita.username}}</span> em {{receita.publicationDate}}</p>
+              </div>
+          </div>
 
-        <span></span>
+          <hr class="border-gray-200 w-full">
 
-        <div>
-            <h2 class="text-xl text-left font-semibold text-(--red)">Descrição</h2>
-            <p class="text-lg">{{receita.description}}</p>
-        </div>
+          <!-- Conteúdo: Descrição -->
+          <div class="w-full">
+              <h2 class="text-xl font-semibold text-(--red) mb-2">Descrição</h2>
+              <p class="text-lg text-gray-700 break-words">{{receita.description}}</p>
+          </div>
 
-        <div>
-            <h2 class="text-xl text-left font-semibold text-(--red)">Ingredientes</h2>
-            <p class="whitespace-pre text-lg">{{receita.ingredients}}</p>
-        </div>
+          <!-- Conteúdo: Ingredientes -->
+          <div class="w-full">
+              <h2 class="text-xl font-semibold text-(--red) mb-2">Ingredientes</h2>
+              <!-- whitespace-pre-wrap respeita as quebras de linha do banco, mas quebra o texto quando chega no fim da tela -->
+              <p class="whitespace-pre-wrap text-lg text-gray-700 break-words">{{receita.ingredients}}</p>
+          </div>
 
-        <div>
-            <h2 class="text-xl text-left font-semibold text-(--red)">Passo a Passo</h2>
-            <p class="whitespace-pre text-lg">{{receita.steps}}</p>
-        </div>
-      </section>
-  
-      <section>
-  
-      </section>
-    </div>
+          <!-- Conteúdo: Passo a Passo -->
+          <div class="w-full">
+              <h2 class="text-xl font-semibold text-(--red) mb-2">Passo a Passo</h2>
+              <p class="whitespace-pre-wrap text-lg text-gray-700 break-words">{{receita.steps}}</p>
+          </div>
+        </section>
+      </div>
+    }
 </main>

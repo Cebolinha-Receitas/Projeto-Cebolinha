@@ -1,4 +1,6 @@
 export interface Receita {
+  publicationDate?: string;
+  username: string;
   id?: string; // UUID do Java é tratado como string no TypeScript
   title: string;
   category: string; // Ex: 'ALMOCO', 'SOBREMESA'

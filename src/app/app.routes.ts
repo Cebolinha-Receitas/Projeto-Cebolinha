@@ -8,9 +8,10 @@ import { Feed } from './feed/feed';
 import { Login } from './login/login';
 import { Perfil } from './perfil/perfil';
 import { CadastroReceitas } from './cadastro-receitas/cadastro-receitas';
-import { EditarDadosConta } from './editar-dados-conta/editar-dados-conta';
 import { authGuard } from './services/auth-guard'; 
 import { guestGuard } from './services/guest-guard';
+import { MinhasReceitas } from './minhas-receitas/minhas-receitas';
+import { PesquisaComponent } from './pesquisa/pesquisa';
 
 export const routes: Routes = [
     // ==========================================
@@ -28,12 +29,13 @@ export const routes: Routes = [
     {path: "perfil", component: Perfil, canActivate: [authGuard]},
     {path: "favoritos", component: Favoritos, canActivate: [authGuard]},
     {path: "cadastro-receitas", component: CadastroReceitas, canActivate: [authGuard]},
-    {path: "editar-dados-conta", component: EditarDadosConta, canActivate: [authGuard]},
+    {path: "minhas-receitas", component: MinhasReceitas, canActivate: [authGuard]},
     
     // ==========================================
     // ROTAS LIVRES (Leitura pública)
     // ==========================================
     {path: "feed", component: Feed},
     {path: "artigo/:codigo", component: ArtigoBlog},
-    {path: "detalhe-receita/:codigo", component: DetalheReceita}
+    {path: "detalhe-receita/:codigo", component: DetalheReceita},
+    {path: "pesquisa", component: PesquisaComponent}
 ];

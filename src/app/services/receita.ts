@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Receita, receitaResponse } from '../models/receita';
 
@@ -13,6 +13,17 @@ export class ReceitaService {
   // GET - Lista todas as receitas para o Feed
   listar(): Observable<receitaResponse> {
     return this.http.get<receitaResponse>(this.API_URL);
+  }
+
+  // GET - Pesquisa receitas filtrando pelo título
+  pesquisar(titulo: string): Observable<receitaResponse> {
+    const params = new HttpParams().set('title', titulo);
+    return this.http.get<receitaResponse>(this.API_URL, { params });
+  }
+
+  // GET - Lista as receitas do usuário logado
+  listarMinhas(): Observable<Receita[]> {
+    return this.http.get<Receita[]>(`${this.API_URL}/my-recipes`);
   }
 
   // GET - Busca uma receita específica por ID

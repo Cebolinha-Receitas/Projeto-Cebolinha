@@ -2,6 +2,8 @@ import { Receita } from "../receita";
 
 export const RECIPE_EMPTY: Receita = {
   id: '',
+  username: '',
+  publicationDate: '',
   title: '',
   category: '', // Ex: 'ALMOCO', 'SOBREMESA'
   description: '',
