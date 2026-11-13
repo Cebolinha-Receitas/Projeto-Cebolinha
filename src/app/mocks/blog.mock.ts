@@ -16,7 +16,7 @@ export const blogItems: blogItem[] = [
 
      Quem preferir, ainda pode usar a mesma base (sem sal) para preparar uma tapioca de cuscuz doce. Goiabada com queijo é um clássico que nunca dá errado, mas também vale usar geleias e até leite condensado. É só usar a criatividade e inovar no preparo! Confira a seguir o passo a passo completo da receita:
 
-     <strong>Ingredientes:</strong>
+     <strong class="text-xl text-(--red)">Ingredientes:</strong>
       1/2 xícara de farinha de milho
       2 colheres (sopa) de leite
       1 pitada de sal
@@ -25,7 +25,7 @@ export const blogItems: blogItem[] = [
       50 g de queijo mussarela ralado ou em fatias
       100 g de carne-seca desfiada e cozida
 
-      <strong>Modo de preparo:</strong>
+      <strong class="text-xl text-(--red)">Modo de preparo:</strong>
       Em um recipiente, misture a farinha de milho, o leite, o ovo e o sal.
       Deixe a mistura descansar por 10 minutos para hidratar.
       Derreta a manteiga em uma frigideira.
@@ -43,7 +43,7 @@ export const blogItems: blogItem[] = [
     text: `
       O bolinho de chuva é um daqueles preparos que remetem imediatamente às tardes em família. Mas, para chegar àquela versão dourada por fora, macia por dentro e sem excesso de gordura, não basta apenas seguir a lista de ingredientes. O ponto da massa antes da fritura também interfere diretamente no resultado.
 
-      <strong>Massa muito líquida pode deixar o bolinho pesado e oleoso</strong>
+      <strong class="text-xl text-(--red)">Massa muito líquida pode deixar o bolinho pesado e oleoso</strong>
       Um dos principais erros está em deixar a massa fina demais. Quando ela fica muito líquida, perde a estrutura necessária para manter o formato ao entrar em contato com o óleo quente. Além disso, a superfície demora mais para formar a crosta responsável por proteger o interior do bolinho durante a fritura.
 
 
@@ -51,7 +51,7 @@ export const blogItems: blogItem[] = [
 
       É justamente por isso que a quantidade de farinha não deve ser tratada como uma medida absolutamente rígida. Dependendo do tamanho dos ovos, da umidade dos ingredientes e até da forma como a farinha é incorporada, a consistência final pode variar.
 
-      <strong>O ponto ideal é parecido com o de um mingau grosso</strong>
+      <strong class="text-xl text-(--red)">O ponto ideal é parecido com o de um mingau grosso</strong>
       A recomendação de chefs para evitar esse problema é observar a textura da massa. A referência é uma consistência semelhante à de um mingau grosso: cremosa, mas suficientemente firme para não escorrer facilmente da colher.
 
       Ao levantar uma colher com a massa, ela deve cair de maneira mais lenta e em uma porção espessa, em vez de formar um fio contínuo. Ao mesmo tempo, não deve ficar tão firme quanto uma massa de pão ou de biscoito.
@@ -60,7 +60,7 @@ export const blogItems: blogItem[] = [
 
       Essa técnica também ajuda a preservar o formato característico do bolinho de chuva, já que a porção de massa consegue se acomodar melhor no óleo quando é colocada para fritar.
 
-      <strong>Temperatura do óleo também faz diferença</strong>
+      <strong class="text-xl text-(--red)">Temperatura do óleo também faz diferença</strong>
       Mesmo com a massa no ponto, a fritura exige atenção. O óleo frio favorece a absorção de gordura, enquanto uma temperatura excessivamente alta pode fazer com que o exterior doure rapidamente sem que o interior cozinhe por completo. Uma faixa em torno de 160 °C a 180 °C costuma ser utilizada para esse tipo de fritura.
 
       Outro cuidado é não colocar muitos bolinhos na panela simultaneamente. Uma quantidade excessiva reduz a temperatura do óleo e pode prejudicar a fritura.
@@ -81,27 +81,27 @@ export const blogItems: blogItem[] = [
 
       A escolha do chocolate é um deles. “Chocolate de boa qualidade é fundamental para se obter um brownie perfeito”, afirma o chef em uma postagem nas redes sociais. Para ele, apostar em um produto de qualidade e com sabor mais intenso e amargo tem um papel importante no resultado final da receita, principalmente em relação à textura.
 
-      <strong>Não diminua o açúcar da receita</strong>
+      <strong class="text-xl text-(--red)">Não diminua o açúcar da receita</strong>
 
       Mesmo que a quantidade pareça exagerada, o açúcar não serve apenas para adoçar. Lambertini explica que o ingrediente também contribui para a formação da crosta característica do brownie.
 
       Por isso, reduzir a medida de açúcar na receita pode alterar a textura do brownie. Para equilibrar o dulçor, a dica é optar por um chocolate mais amargo.
 
-      <strong>Bater demais a massa pode prejudicar a textura</strong>
+      <strong class="text-xl text-(--red)">Bater demais a massa pode prejudicar a textura</strong>
 
       Diferentemente de algumas massas de bolo, o brownie não precisa incorporar muito ar. Depois que os ingredientes estiverem bem misturados, não há necessidade de continuar batendo. ‘Esse cuidado ajuda a preservar a textura mais densa e úmida que caracteriza o doce”, diz Lambertini .
 
-      <strong>Forno a 180 °C e atenção ao tempo</strong>
+      <strong class="text-xl text-(--red)">Forno a 180 °C e atenção ao tempo</strong>
       Lambertini recomenda assar o brownie a 180 °C. Mas a temperatura não é o único ponto de atenção. O tempo também precisa ser controlado.
 
       O interior deve continuar úmido. Por isso, alguns minutos a mais podem ser suficientes para deixar a massa seca e comprometer a textura.
 
       Outro detalhe importante é o tamanho da forma. Uma massa espalhada em um recipiente maior ficará mais baixa e assará de maneira diferente de uma preparação colocada em uma forma pequena e alta.
 
-      <strong>Esqueça o teste do palito</strong>
+      <strong class="text-xl text-(--red)">Esqueça o teste do palito</strong>
       O truque de espetar um palito no centro funciona bem para muitos bolos, mas não é a melhor referência para brownie. A massa deve manter umidade no interior. Se você esperar o palito sair completamente seco, existe o risco de ter passado do ponto.
 
-      <strong>Nozes dão o contraste que o brownie precisa</strong>
+      <strong class="text-xl text-(--red)">Nozes dão o contraste que o brownie precisa</strong>
 
       Para Lambertini, as nozes também têm espaço garantido na receita. Além do sabor, elas acrescentam crocância à massa densa e cremosa. O contraste entre o chocolate e os pedaços crocantes deixa cada mordida mais interessante.
 

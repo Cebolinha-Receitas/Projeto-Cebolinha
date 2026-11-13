@@ -9,3 +9,7 @@ export interface Receita {
   createdDate?: string;
   updatedDate?: string;
 }
+
+export interface receitaResponse {
+  content: Receita[]
+}

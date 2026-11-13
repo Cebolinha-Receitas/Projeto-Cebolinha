@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Receita } from '../models/receita';
+import { Receita, receitaResponse } from '../models/receita';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,8 @@ export class ReceitaService {
   private readonly API_URL = 'http://localhost:8080/recipes';
 
   // GET - Lista todas as receitas para o Feed
-  listar(): Observable<Receita[]> {
-    return this.http.get<Receita[]>(this.API_URL);
+  listar(): Observable<receitaResponse> {
+    return this.http.get<receitaResponse>(this.API_URL);
   }
 
   // GET - Busca uma receita específica por ID

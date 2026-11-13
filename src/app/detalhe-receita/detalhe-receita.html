@@ -1,4 +1,4 @@
-<main>
+<main class="flex flex-col px-15 py-5 bg-white rounded-xl max-w-[70%] items-center justify-self-center gap-5 shadow-2xl">
     <div *ngIf="carregando" class="text-gray-500 font-semibold">
       Carregando receitas...
     </div>
@@ -10,10 +10,10 @@
     <div *ngIf="!!receita.id">
       <section>
         <div>
-            <h1> {{receita.title}} </h1>
-            <img [src]="receita.photoUrl" alt="">
+            <h1 class="text-3xl font-bold text-(--darkgreen)"> {{receita.title}} </h1>
+            <img class="rounded-xl shadow-xl" [src]="receita.photoUrl" alt="">
             <p>{{receita.category}}</p>
-            <p>Criado em {{receita.createdDate}}</p>
+            <p class="text-gray-500">Criado em {{receita.createdDate}}</p>
             <p *ngIf="receita.updatedDate">
                 Atualizado em {{receita.updatedDate}}
             </p>
