@@ -11,5 +11,6 @@ export const RECIPE_EMPTY: Receita = {
   steps: '', // Equivale ao modo de preparo
   photoUrl: '',
   createdDate: '',
-  updatedDate: ''
+  updatedDate: '',
+  isFavorito: false
 }
