@@ -3,9 +3,8 @@
 ## Funcionalidades
 
 - 🔍 **Busca Inteligente:** Filtre receitas por ingredientes, nome ou categoria.
-- 📂 **Categorias:** Navegação fácil por tipos de prato (Massas, Sobremesas, Saudáveis, etc.).
 - ❤️ **Favoritos:** Salve suas receitas prediletas utilizando gerenciamento de estado local.
-
+- 👨‍🍳 **Cadastro de receitas:** Compartilhe seus segredos culinários com outros usuários.
 ---
 
 ## Tecnologias Utilizadas
